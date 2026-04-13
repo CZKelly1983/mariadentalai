@@ -5,17 +5,24 @@
 
 ## What You're Getting
 
-### 1. **index.html** (The Entire Website)
-A single, production-ready HTML file that contains:
-- All styling (CSS)
-- All functionality (JavaScript)
-- All content (HTML)
+### File Structure (Professional & Clean)
 
-**Why one file?**
-- Easy to customize
-- Simple to deploy to GitHub Pages
-- No build process or dependencies
-- Works everywhere (offline too)
+```
+mariadentalai.github.io/
+├── index.html          (Clean HTML structure)
+├── style.css           (Beautiful, organized styling)
+├── script.js           (Smooth interactions & modals)
+└── [documentation]     (Guides for deployment & customization)
+```
+
+**Why three separate files?**
+- Professional development structure
+- Easy to customize and maintain
+- Clear separation of concerns
+- Follows web development best practices
+- Beautiful, elegant styling that makes a real impression
+
+---
 
 ---
 
@@ -36,6 +43,35 @@ This website is **person-centric**:
 - Heavy on visitor transformation
 
 **Result:** Visitors see themselves reflected and take action.
+
+---
+
+## Design Excellence
+
+### Typography
+- **Syne** - Distinctive, modern display font for headings (sets tone)
+- **Inter** - Clean, readable body font (maximum clarity)
+- Pairing creates visual hierarchy and professional elegance
+
+### Color Palette
+- **Deep Ocean Blue** (#0F4C7A) - Trust, stability, professionalism
+- **Bright Teal** (#00A8E8) - Energy, action, hope (CTA color)
+- **Warm Earth Tan** (#D4A574) - Warmth, approachable, human
+- These colors work together to create sophistication without coldness
+
+### Visual Details
+- Gradient backgrounds with subtle depth
+- Smooth micro-interactions and hover states
+- Careful spacing and breathing room
+- Elegant shadow system for hierarchy
+- Animated transitions that feel natural
+- Radial gradient accents for visual interest
+
+### Layout
+- Responsive grid system
+- Asymmetrical composition (not cookie-cutter)
+- Strategic use of whitespace
+- Mobile-first design that scales beautifully
 
 ---
 
