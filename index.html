@@ -53,54 +53,37 @@
         </div>
     </section>
 
-    <!-- Is This For You? Section with Quiz -->
+    <!-- Is This For You? Section -->
     <section id="is-this-for-you" class="section is-for-you">
         <div class="container">
             <h2>Is this for you?</h2>
             <p class="section-subtitle">Take our quick 5-question quiz to see if you're a good fit — and get a personalized roadmap.</p>
             
-            <div class="quiz-container" id="quizContainer">
-                <form id="quizForm" onsubmit="handleQuizSubmit(event)">
-                    <div class="quiz-question">
-                        <p><strong>1. How many years have you been a dental hygienist?</strong></p>
-                        <label><input type="radio" name="q1" value="yes"> 5+ years</label>
-                        <label><input type="radio" name="q1" value="no"> Less than 5 years</label>
+            <div style="max-width: 600px; margin: 0 auto;">
+                <div class="situation-grid">
+                    <div class="situation-card">
+                        <h3>You're feeling...</h3>
+                        <ul>
+                            <li>Burnt out from the daily grind</li>
+                            <li>Curious about what else is possible</li>
+                            <li>Ready for flexibility and remote work</li>
+                            <li>Like your expertise should mean more</li>
+                        </ul>
                     </div>
-
-                    <div class="quiz-question">
-                        <p><strong>2. Are you interested in working remotely?</strong></p>
-                        <label><input type="radio" name="q2" value="yes"> Yes, very interested</label>
-                        <label><input type="radio" name="q2" value="no"> Not sure yet</label>
+                    <div class="situation-card">
+                        <h3>You're wondering...</h3>
+                        <ul>
+                            <li>"Am I even qualified for tech?"</li>
+                            <li>"How much will this actually cost?"</li>
+                            <li>"Can I do this while working?"</li>
+                            <li>"Is there really a path for me?"</li>
+                        </ul>
                     </div>
-
-                    <div class="quiz-question">
-                        <p><strong>3. Have you ever worked with tech tools (beyond practice software)?</strong></p>
-                        <label><input type="radio" name="q3" value="yes"> Yes, somewhat familiar</label>
-                        <label><input type="radio" name="q3" value="no"> Not really</label>
-                    </div>
-
-                    <div class="quiz-question">
-                        <p><strong>4. How important is having a mentor guide you through the transition?</strong></p>
-                        <label><input type="radio" name="q4" value="yes"> Very important</label>
-                        <label><input type="radio" name="q4" value="no"> I prefer to learn independently</label>
-                    </div>
-
-                    <div class="quiz-question">
-                        <p><strong>5. What's your biggest concern about making a career change?</strong></p>
-                        <label><input type="radio" name="q5" value="cost"> Cost / financial commitment</label>
-                        <label><input type="radio" name="q5" value="time"> Time / can't commit to long training</label>
-                        <label><input type="radio" name="q5" value="qualify"> Not qualified enough</label>
-                        <label><input type="radio" name="q5" value="opportunity"> Finding real job opportunities</label>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Get My Results</button>
-                </form>
-            </div>
-
-            <div class="quiz-results" id="quizResults" style="display: none;">
-                <h3>You're a Great Fit!</h3>
-                <p id="resultsText"></p>
-                <button class="btn btn-primary" onclick="openModal('call')">Book Your Discovery Call</button>
+                </div>
+                
+                <div style="text-align: center; margin-top: var(--spacing-xl);">
+                    <button class="btn btn-primary" onclick="openModal('quiz')">Take the Quiz (2 min)</button>
+                </div>
             </div>
         </div>
     </section>
@@ -395,9 +378,38 @@
 
     <!-- Modals -->
     <div id="quizModal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content modal-quiz">
             <button class="modal-close" onclick="closeModal('quiz')">×</button>
-            <!-- Quiz is on main page, modal redirects here -->
+            
+            <div id="quizProgress" style="margin-bottom: var(--spacing-lg);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
+                    <span id="questionNumber" style="font-weight: 600; color: var(--primary);">Question 1 of 5</span>
+                    <span id="progressPercent" style="font-size: 12px; color: var(--text-light);">0%</span>
+                </div>
+                <div style="width: 100%; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden;">
+                    <div id="progressBar" style="width: 20%; height: 100%; background: var(--accent); transition: width 0.3s ease;"></div>
+                </div>
+            </div>
+
+            <form id="quizForm" onsubmit="handleQuizNext(event)">
+                <h3 id="questionText" style="margin-bottom: var(--spacing-xl); font-size: 20px;"></h3>
+                
+                <div id="optionsContainer" style="display: flex; flex-direction: column; gap: var(--spacing-md); margin-bottom: var(--spacing-xl);">
+                    <!-- Options will be inserted here by JavaScript -->
+                </div>
+
+                <div style="display: flex; gap: var(--spacing-md);">
+                    <button type="button" id="backBtn" class="btn btn-outline" onclick="goToPreviousQuestion()" style="flex: 1;">Back</button>
+                    <button type="submit" id="nextBtn" class="btn btn-primary" style="flex: 1;">Next</button>
+                </div>
+            </form>
+
+            <div id="quizResultsScreen" style="display: none;">
+                <h3 style="margin-bottom: var(--spacing-lg);">You're a Great Fit!</h3>
+                <p id="resultsText" style="margin-bottom: var(--spacing-xl); line-height: 1.8;"></p>
+                <button class="btn btn-primary" style="width: 100%; margin-bottom: var(--spacing-md);" onclick="closeModal('quiz'); openModal('call')">Book Your Discovery Call</button>
+                <button class="btn btn-outline" style="width: 100%;" onclick="closeModal('quiz')">Close</button>
+            </div>
         </div>
     </div>
 

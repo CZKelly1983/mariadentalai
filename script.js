@@ -21,6 +21,11 @@ function openModal(modalType) {
     if (modal) {
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        
+        // Initialize quiz when opening quiz modal
+        if (modalType === 'quiz') {
+            initQuiz();
+        }
     }
 }
 
@@ -52,36 +57,164 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Quiz Functionality
-document.getElementById('quizForm')?.addEventListener('submit', handleQuizSubmit);
+// One-Question-at-a-Time Quiz
+const quizQuestions = [
+    {
+        id: 'q1',
+        question: 'How many years have you been a dental hygienist?',
+        options: [
+            { text: '5+ years', value: 'yes' },
+            { text: 'Less than 5 years', value: 'no' }
+        ]
+    },
+    {
+        id: 'q2',
+        question: 'Are you interested in working remotely?',
+        options: [
+            { text: 'Yes, very interested', value: 'yes' },
+            { text: 'Not sure yet', value: 'no' }
+        ]
+    },
+    {
+        id: 'q3',
+        question: 'Have you ever worked with tech tools (beyond practice software)?',
+        options: [
+            { text: 'Yes, somewhat familiar', value: 'yes' },
+            { text: 'Not really', value: 'no' }
+        ]
+    },
+    {
+        id: 'q4',
+        question: 'How important is having a mentor guide you through the transition?',
+        options: [
+            { text: 'Very important', value: 'yes' },
+            { text: 'I prefer to learn independently', value: 'no' }
+        ]
+    },
+    {
+        id: 'q5',
+        question: 'What\'s your biggest concern about making a career change?',
+        options: [
+            { text: 'Cost / financial commitment', value: 'cost' },
+            { text: 'Time / can\'t commit to long training', value: 'time' },
+            { text: 'Not qualified enough', value: 'qualify' },
+            { text: 'Finding real job opportunities', value: 'opportunity' }
+        ]
+    }
+];
 
-function handleQuizSubmit(event) {
+let currentQuestion = 0;
+let quizAnswers = {};
+
+function initQuiz() {
+    currentQuestion = 0;
+    quizAnswers = {};
+    showQuestion(0);
+    document.getElementById('quizResultsScreen').style.display = 'none';
+    document.getElementById('quizForm').style.display = 'block';
+}
+
+function showQuestion(index) {
+    const question = quizQuestions[index];
+    const progress = ((index + 1) / quizQuestions.length) * 100;
+    
+    // Update progress
+    document.getElementById('questionNumber').textContent = `Question ${index + 1} of ${quizQuestions.length}`;
+    document.getElementById('progressPercent').textContent = `${Math.round(progress)}%`;
+    document.getElementById('progressBar').style.width = `${progress}%`;
+    
+    // Update question
+    document.getElementById('questionText').textContent = question.question;
+    
+    // Update options
+    const optionsContainer = document.getElementById('optionsContainer');
+    optionsContainer.innerHTML = '';
+    
+    question.options.forEach(option => {
+        const label = document.createElement('label');
+        label.style.cssText = `
+            display: flex;
+            align-items: center;
+            padding: var(--spacing-md);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        `;
+        
+        label.onmouseover = () => {
+            label.style.borderColor = 'var(--accent)';
+            label.style.backgroundColor = 'rgba(216, 155, 111, 0.05)';
+        };
+        label.onmouseout = () => {
+            label.style.borderColor = 'var(--border)';
+            label.style.backgroundColor = 'transparent';
+        };
+        
+        const radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.name = `quiz_${index}`;
+        radio.value = option.value;
+        radio.style.marginRight = 'var(--spacing-md)';
+        
+        if (quizAnswers[question.id] === option.value) {
+            radio.checked = true;
+        }
+        
+        const span = document.createElement('span');
+        span.textContent = option.text;
+        span.style.flex = '1';
+        
+        label.appendChild(radio);
+        label.appendChild(span);
+        optionsContainer.appendChild(label);
+    });
+    
+    // Update button states
+    document.getElementById('backBtn').style.display = index === 0 ? 'none' : 'block';
+    document.getElementById('nextBtn').textContent = index === quizQuestions.length - 1 ? 'See Results' : 'Next';
+}
+
+function handleQuizNext(event) {
     event.preventDefault();
     
-    const form = event.target;
-    const answers = {
-        q1: form.q1.value,
-        q2: form.q2.value,
-        q3: form.q3.value,
-        q4: form.q4.value,
-        q5: form.q5.value
-    };
+    const selectedOption = document.querySelector(`input[name="quiz_${currentQuestion}"]:checked`);
+    if (!selectedOption) {
+        alert('Please select an answer');
+        return;
+    }
     
+    const question = quizQuestions[currentQuestion];
+    quizAnswers[question.id] = selectedOption.value;
+    
+    if (currentQuestion < quizQuestions.length - 1) {
+        currentQuestion++;
+        showQuestion(currentQuestion);
+    } else {
+        showQuizResults();
+    }
+}
+
+function goToPreviousQuestion() {
+    if (currentQuestion > 0) {
+        currentQuestion--;
+        showQuestion(currentQuestion);
+    }
+}
+
+function showQuizResults() {
     // Calculate fit score
     let score = 0;
-    if (answers.q1 === 'yes') score++;
-    if (answers.q2 === 'yes') score++;
-    if (answers.q3 === 'yes') score++;
-    if (answers.q4 === 'yes') score++;
+    if (quizAnswers.q1 === 'yes') score++;
+    if (quizAnswers.q2 === 'yes') score++;
+    if (quizAnswers.q3 === 'yes') score++;
+    if (quizAnswers.q4 === 'yes') score++;
     
-    // Generate personalized result
-    const resultsText = generateQuizResults(score, answers);
+    const resultsText = generateQuizResults(score, quizAnswers);
     
-    // Show results
-    document.getElementById('quizContainer').style.display = 'none';
-    const resultsDiv = document.getElementById('quizResults');
+    document.getElementById('quizForm').style.display = 'none';
+    document.getElementById('quizResultsScreen').style.display = 'block';
     document.getElementById('resultsText').textContent = resultsText;
-    resultsDiv.style.display = 'block';
 }
 
 function generateQuizResults(score, answers) {
