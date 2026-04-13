@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental AI Solutions - Career Transition for Hygienists</title>
+    <meta name="description" content="Transform your dental hygiene career into a tech-powered future with personalized coaching and real opportunities.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #185FA5;
+            --primary-light: #378ADD;
+            --primary-dark: #0C447C;
+            --accent: #D85A30;
+            --accent-light: #F0997B;
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F8F6F2;
+            --bg-tertiary: #F0EBE5;
+            --text-primary: #2C2C2A;
+            --text-secondary: #5F5E5A;
+            --text-tertiary: #888780;
+            --border: #D3D1C7;
+            --success: #639922;
+            --surface: rgba(255, 255, 255, 0.95);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #1a1a18;
+                --bg-secondary: #2c2c2a;
+                --bg-tertiary: #3d3d3a;
+                --text-primary: #f5f5f3;
+                --text-secondary: #b4b2a9;
+                --text-tertiary: #888780;
+                --border: #3d3d3a;
+                --surface: rgba(26, 26, 24, 0.95);
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(28px, 5vw, 48px);
+        }
+
+        h2 {
+            font-size: clamp(24px, 4vw, 36px);
+        }
+
+        h3 {
+            font-size: clamp(18px, 3vw, 24px);
+        }
+
+        p {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: clamp(60px, 10vw, 100px) 0;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--surface);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+        }
+
+        .nav-brand {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-secondary {
+            background: var(--bg-secondary);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+            padding: 10px 20px;
+        }
+
+        .btn-ghost:hover {
+            background: var(--bg-secondary);
+            border-color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 140px;
+            padding-bottom: 80px;
+            background: linear-gradient(135deg, #f8f6f2 0%, #f0ebe5 100%);
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary);
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .hero h1 {
+            margin-bottom: 24px;
+            color: var(--text-primary);
+            animation: slideUp 0.8s ease 0.1s both;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 32px;
+            color: var(--text-secondary);
+            animation: slideUp 0.8s ease 0.2s both;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            animation: slideUp 0.8s ease 0.3s both;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Situation Section */
+        .situation {
+            background: var(--bg-secondary);
+        }
+
+        .situation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .situation-card {
+            background: var(--bg-primary);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            animation: scaleIn 0.6s ease;
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .situation-card h3 {
+            color: var(--primary);
+            margin-bottom: 16px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .situation-card ul {
+            list-style: none;
+        }
+
+        .situation-card li {
+            padding: 8px 0;
+            color: var(--text-primary);
+            font-size: 15px;
+        }
+
+        .situation-card li:before {
+            content: "▸ ";
+            color: var(--accent);
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .situation-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+
+        /* Transformation Section */
+        .transformation {
+            background: var(--bg-primary);
+        }
+
+        .transform-grid {
+            display: grid;
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .transform-item {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .transform-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .transform-item h3 {
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .transform-item p {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        /* Programs Section */
+        .programs {
+            background: var(--bg-secondary);
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .program-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .program-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .program-card.featured {
+            border: 2px solid var(--primary);
+            background: linear-gradient(135deg, rgba(24, 95, 165, 0.05) 0%, rgba(55, 138, 221, 0.05) 100%);
+        }
+
+        .program-badge {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: var(--accent);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .program-badge.featured {
+            background: var(--primary);
+        }
+
+        .program-card h3 {
+            margin-top: 8px;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .program-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .program-price {
+            margin-bottom: 24px;
+        }
+
+        .program-price .amount {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .program-price .details {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            margin-top: 4px;
+        }
+
+        .program-features {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .program-features li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .program-features li:before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: var(--bg-primary);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .testimonial {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--accent);
+            padding: 32px;
+            border-radius: 8px;
+        }
+
+        .testimonial-quote {
+            font-size: 15px;
+            font-style: italic;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 14px;
+        }
+
+        .testimonial-role {
+            font-size: 12px;
+            color: var(--text-tertiary);
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, #f8f6f2 0%, #f0ebe5 100%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 16px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .about-text strong {
+            color: var(--primary);
+        }
+
+        .about-highlights {
+            list-style: none;
+            margin-top: 32px;
+        }
+
+        .about-highlights li {
+            padding: 12px 0;
+            font-size: 15px;
+            color: var(--text-primary);
+            display: flex;
+            gap: 12px;
+        }
+
+        .about-highlights li:before {
+            content: "→";
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .about-image {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .about-image {
+                order: -1;
+            }
+        }
+
+        /* CTA Section */
+        .cta-final {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-final h2 {
+            color: white;
+            margin-bottom: 24px;
+        }
+
+        .cta-final p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-white:hover {
+            background: var(--bg-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 48px 24px;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            display: block;
+            padding: 8px 0;
+            transition: color 0.2s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--bg-tertiary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.2s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        .modal-close:hover {
+            color: var(--text-primary);
+        }
+
+        .modal h2 {
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .modal p {
+            margin-bottom: 24px;
+            font-size: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 14px;
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 100px;
+            }
+
+            .section {
+                padding: 40px 0;
+            }
+
+            .transform-item {
+                grid-template-columns: 1fr;
+            }
+
+            .transform-number {
+                width: 48px;
+                height: 48px;
+                font-size: 20px;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            animation: fadeInOnScroll 0.6s ease forwards;
+        }
+
+        @keyframes fadeInOnScroll {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="nav-brand">Dental AI</a>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#" onclick="openModal('contact'); return false;">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-label">Career Transition for Dental Hygienists</div>
+                <h1>You spent 15+ years perfecting clinical care.</h1>
+                <p>Now it's time to leverage that expertise in roles that offer flexibility, growth, and impact—without starting over.</p>
+                <div class="hero-cta">
+                    <button class="btn btn-primary" onclick="openModal('assessment')">
+                        Take the free assessment
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollTo('programs')">
+                        Explore programs
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Situation Section -->
+    <section class="situation section">
+        <div class="container">
+            <h2>Where you might be right now</h2>
+            <div class="situation-grid">
+                <div class="situation-card">
+                    <h3>What you're feeling</h3>
+                    <ul>
+                        <li>Burnt out from clinical work</li>
+                        <li>Curious about tech and AI roles</li>
+                        <li>Wondering if you're "qualified"</li>
+                        <li>Looking for more flexibility</li>
+                    </ul>
+                </div>
+                <div class="situation-card">
+                    <h3>What's holding you back</h3>
+                    <ul>
+                        <li>Cost and time commitment</li>
+                        <li>Fear of starting from zero</li>
+                        <li>Unsure where to begin</li>
+                        <li>Not seeing yourself in tech</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformation Section -->
+    <section class="transformation section">
+        <div class="container">
+            <h2>What you'll gain from working with us</h2>
+            <div class="transform-grid">
+                <div class="transform-item">
+                    <div class="transform-number">1</div>
+                    <div>
+                        <h3>Clarity on your options</h3>
+                        <p>Real AI and tech roles that match your background—not a generic list. You'll understand exactly which paths align with your skills and interests.</p>
+                    </div>
+                </div>
+                <div class="transform-item">
+                    <div class="transform-number">2</div>
+                    <div>
+                        <h3>Practical skills you can use immediately</h3>
+                        <p>Real-world AI knowledge, not abstract theory. You'll learn how to use the tools and speak the language that recruiters understand.</p>
+                    </div>
+                </div>
+                <div class="transform-item">
+                    <div class="transform-number">3</div>
+                    <div>
+                        <h3>Connections that lead to opportunities</h3>
+                        <p>Actual introductions to companies that value what hygienists bring. You won't be searching job boards alone—you'll have a mentor opening doors.</p>
+                    </div>
+                </div>
+                <div class="transform-item">
+                    <div class="transform-number">4</div>
+                    <div>
+                        <h3>Confidence in your value</h3>
+                        <p>Stop downplaying your clinical expertise. Learn how to position 15+ years of healthcare experience as a competitive advantage in tech.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs section">
+        <div class="container">
+            <h2>Choose your path</h2>
+            <p style="margin-top: 12px; font-size: 16px;">Every path starts with a conversation. Pick the one that matches where you are right now.</p>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-badge">Free</div>
+                    <h3>Free Consultation</h3>
+                    <p class="program-description">Perfect if you're just exploring or want to understand your options.</p>
+                    <div class="program-price">
+                        <div class="amount">$0</div>
+                        <div class="details">30-minute 1:1 call</div>
+                    </div>
+                    <ul class="program-features">
+                        <li>Explore your interests and goals</li>
+                        <li>Learn about career pathways</li>
+                        <li>Get personalized recommendations</li>
+                    </ul>
+                    <button class="btn btn-secondary" onclick="openModal('contact')">Schedule call</button>
+                </div>
+
+                <div class="program-card featured">
+                    <div class="program-badge featured">Most popular</div>
+                    <h3>Career Launch Program</h3>
+                    <p class="program-description">6-week intensive designed to get you interview-ready and connected to opportunities.</p>
+                    <div class="program-price">
+                        <div class="amount">$497</div>
+                        <div class="details">Or 2 payments of $297</div>
+                    </div>
+                    <ul class="program-features">
+                        <li>AI Skills Foundation (4 modules)</li>
+                        <li>Resume conversion workshop</li>
+                        <li>LinkedIn positioning strategy</li>
+                        <li>2 personalized coaching sessions</li>
+                        <li>Access to opportunity network</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openModal('enrollment')">Start my journey</button>
+                </div>
+
+                <div class="program-card">
+                    <h3>Ongoing 1:1 Coaching</h3>
+                    <p class="program-description">For those who want continuous, personalized guidance at your own pace.</p>
+                    <div class="program-price">
+                        <div class="amount">Custom</div>
+                        <div class="details">Based on your needs</div>
+                    </div>
+                    <ul class="program-features">
+                        <li>Weekly coaching calls</li>
+                        <li>Career strategy planning</li>
+                        <li>Interview preparation</li>
+                        <li>Networking support</li>
+                    </ul>
+                    <button class="btn btn-ghost" onclick="openModal('contact')">Learn more</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section">
+        <div class="container">
+            <h2>People like you have made the shift</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p class="testimonial-quote">"I was overwhelmed and unsure of myself. Maria's guidance completely transformed my experience. She patiently showed me not just how, but why, and encouraged me every step of the way. Thanks to her support, I am confident!"</p>
+                    <p class="testimonial-author">Ceydel Fundora</p>
+                    <p class="testimonial-role">Dental Hygienist & Career Transitioner</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-quote">"Maria was an incredible mentor from day one. She made me feel confident, supported, and truly welcomed. Her guidance was patient, judgment-free, and rooted in a genuine desire to see me succeed."</p>
+                    <p class="testimonial-author">Jenny Vasquez</p>
+                    <p class="testimonial-role">CRDH</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-quote">"Maria has trained hygiene teams across our entire territory on technology, equipment, and software. She quickly brings teams up to speed and is someone we can always count on."</p>
+                    <p class="testimonial-author">Clinical Director</p>
+                    <p class="testimonial-role">Large Dental Organization</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Why Maria built this</h2>
+                    <p>Maria spent more than 20 years in dentistry—15+ as a practicing hygienist. She had the skills, the expertise, the knowledge. But the tech industry didn't see her value.</p>
+                    <p>So she did what most hygienists shouldn't have to do: she went back to school and earned a Master's Degree in Applied Digital Technology with a concentration in Business Analytics and AI.</p>
+                    <p><strong>Only then</strong> did companies take her seriously. But it shouldn't be that hard.</p>
+                    <p>Since breaking into tech, she's trained 30+ offices, partnered with AI companies, and mentored hygienists into roles they never thought possible. And she realized: <strong>No hygienist should need another degree</strong>. They just need access, guidance, and someone who knows the way.</p>
+                    <ul class="about-highlights">
+                        <li>Trained hygiene teams across 30+ offices</li>
+                        <li>Partnered with tech startups as a clinical advisor</li>
+                        <li>Mentored 40+ hygienists into new roles</li>
+                        <li>Speaker at schools, podcasts, and industry events</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    Maria Jackson<br>Dental Hygienist → Tech Innovator
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="cta-final section">
+        <div class="container">
+            <h2>Ready to explore your next chapter?</h2>
+            <p>Every path starts with understanding what's possible. Let's talk about where you want to go.</p>
+            <div class="cta-buttons">
+                <button class="btn btn-white" onclick="openModal('assessment')">Take the free assessment</button>
+                <button class="btn btn-white" onclick="openModal('contact')">Schedule a conversation</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Programs</h4>
+                <ul>
+                    <li><a href="#" onclick="scrollTo('programs'); return false;">Free Consultation</a></li>
+                    <li><a href="#" onclick="scrollTo('programs'); return false;">Career Launch</a></li>
+                    <li><a href="#" onclick="scrollTo('programs'); return false;">1:1 Coaching</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About Maria</a></li>
+                    <li><a href="#" onclick="openModal('contact'); return false;">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/mariadentalai" target="_blank" title="LinkedIn">in</a>
+                    <a href="https://instagram.com/dental.ai.solutions" target="_blank" title="Instagram">📷</a>
+                    <a href="https://tiktok.com/@dental.ai.solution" target="_blank" title="TikTok">⏪</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Dental AI Solutions. Helping hygienists build careers beyond the operatory.</p>
+        </div>
+    </footer>
+
+    <!-- Assessment Modal -->
+    <div id="assessment-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('assessment')">×</button>
+            <h2>Let's assess your readiness</h2>
+            <p>Answer a few quick questions to get personalized recommendations on which path is best for you.</p>
+            <form onsubmit="handleAssessment(event)">
+                <div class="form-group">
+                    <label>What's your main reason for considering a career change?</label>
+                    <select style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 6px; font-family: inherit; background: var(--bg-secondary);">
+                        <option>Select an option</option>
+                        <option>Burnout from clinical work</option>
+                        <option>Looking for flexibility</option>
+                        <option>Interested in tech/AI</option>
+                        <option>Want higher income</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Email address</label>
+                    <input type="email" required placeholder="you@example.com">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Get my recommendations</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Enrollment Modal -->
+    <div id="enrollment-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('enrollment')">×</button>
+            <h2>Join the Career Launch Program</h2>
+            <p>You're about to start a 6-week journey to transform your career. Let's get you set up.</p>
+            <form onsubmit="handleEnrollment(event)">
+                <div class="form-group">
+                    <label>Full name</label>
+                    <input type="text" required placeholder="Jane Smith">
+                </div>
+                <div class="form-group">
+                    <label>Email address</label>
+                    <input type="email" required placeholder="jane@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Phone number</label>
+                    <input type="tel" required placeholder="(555) 123-4567">
+                </div>
+                <div class="form-group">
+                    <label>Tell us a bit about your background (optional)</label>
+                    <textarea placeholder="Years in dentistry, current role, etc."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Proceed to checkout</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('contact')">×</button>
+            <h2>Let's connect</h2>
+            <p>Schedule a time to talk, or send us a message directly.</p>
+            <form onsubmit="handleContact(event)">
+                <div class="form-group">
+                    <label>Your name</label>
+                    <input type="text" required placeholder="Jane Smith">
+                </div>
+                <div class="form-group">
+                    <label>Email address</label>
+                    <input type="email" required placeholder="jane@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea required placeholder="Tell us how we can help..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send message</button>
+            </form>
+            <p style="margin-top: 24px; font-size: 14px; text-align: center; color: var(--text-tertiary);">
+                Or email directly: <strong>maria.dentalai@gmail.com</strong>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Modal functions
+        function openModal(type) {
+            const modal = document.getElementById(type + '-modal');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(type) {
+            const modal = document.getElementById(type + '-modal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal when clicking outside
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Scroll utility
+        function scrollTo(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Form handlers
+        function handleAssessment(e) {
+            e.preventDefault();
+            const email = e.target.querySelector('input[type="email"]').value;
+            alert(`Thanks for completing the assessment! We'll send personalized recommendations to ${email}`);
+            closeModal('assessment');
+        }
+
+        function handleEnrollment(e) {
+            e.preventDefault();
+            const name = e.target.querySelector('input[type="text"]').value;
+            alert(`Welcome to the program, ${name}! You'll receive enrollment details at the email provided.`);
+            closeModal('enrollment');
+        }
+
+        function handleContact(e) {
+            e.preventDefault();
+            const name = e.target.querySelector('input[type="text"]').value;
+            alert(`Thanks for reaching out, ${name}! We'll get back to you soon.`);
+            closeModal('contact');
+        }
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.program-card, .transform-item, .testimonial, .situation-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
