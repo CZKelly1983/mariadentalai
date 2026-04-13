@@ -1,15 +1,15 @@
 // ============================================
-// DENTAL AI SOLUTIONS — Script 2025
+// DENTAL AI SOLUTIONS — From Chairside to AI
 // ============================================
 
 // ── Navbar scroll effect
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
-});
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
 
 // ── Mobile Menu
-document.getElementById('mobileMenuToggle')?.addEventListener('click', function() {
+document.getElementById('mobileMenuToggle')?.addEventListener('click', function () {
     document.getElementById('navMenu').classList.toggle('active');
 });
 document.querySelectorAll('.nav-link').forEach(link => {
@@ -18,12 +18,11 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
 // ── Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
         if (href !== '#' && document.querySelector(href)) {
             e.preventDefault();
-            const offset = 80;
-            const top = document.querySelector(href).getBoundingClientRect().top + window.scrollY - offset;
+            const top = document.querySelector(href).getBoundingClientRect().top + window.scrollY - 80;
             window.scrollTo({ top, behavior: 'smooth' });
         }
     });
@@ -37,29 +36,27 @@ const observer = new IntersectionObserver((entries) => {
             observer.unobserve(entry.target);
         }
     });
-}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-document.querySelectorAll('.program-card, .resource-card, .change-item, .testimonial, .fit-card, .cred-item').forEach((el, i) => {
-    el.classList.add('fade-in');
-    el.style.transitionDelay = `${(i % 4) * 80}ms`;
+document.querySelectorAll('.program-card, .resource-card, .change-item, .testimonial, .fit-card, .cred-item, .stat-box').forEach((el, i) => {
+    el.classList.add('fade-up');
+    el.style.transitionDelay = `${(i % 4) * 70}ms`;
     observer.observe(el);
 });
 
 // ── Modals
 function openModal(type) {
     const modal = document.getElementById(type + 'Modal');
-    if (modal) {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        if (type === 'quiz') initQuiz();
-    }
+    if (!modal) return;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    if (type === 'quiz') initQuiz();
 }
 function closeModal(type) {
     const modal = document.getElementById(type + 'Modal');
-    if (modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
+    if (!modal) return;
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
 }
 document.querySelectorAll('.modal').forEach(modal => {
     modal.addEventListener('click', e => {
@@ -76,44 +73,44 @@ document.addEventListener('keydown', e => {
 const quizQuestions = [
     {
         id: 'q1',
-        question: 'How many years have you been a dental hygienist?',
+        question: 'How long have you been working as a dental professional?',
         options: [
-            { text: '5+ years', value: 'yes' },
+            { text: '5 or more years', value: 'yes' },
             { text: 'Less than 5 years', value: 'no' }
         ]
     },
     {
         id: 'q2',
-        question: 'Are you interested in working remotely or flexibly?',
+        question: 'How interested are you in working remotely or with a more flexible schedule?',
         options: [
-            { text: 'Yes, very interested', value: 'yes' },
-            { text: 'Not sure yet', value: 'no' }
+            { text: 'Very interested — flexibility is a priority for me', value: 'yes' },
+            { text: 'I am still figuring out what I want', value: 'no' }
         ]
     },
     {
         id: 'q3',
-        question: 'Have you ever worked with tech tools beyond basic practice software?',
+        question: 'Have you had any exposure to digital tools or technology beyond standard practice software?',
         options: [
-            { text: 'Yes, somewhat familiar', value: 'yes' },
+            { text: 'Yes — I have some familiarity', value: 'yes' },
             { text: 'Not really', value: 'no' }
         ]
     },
     {
         id: 'q4',
-        question: 'How important is having a mentor guide your transition?',
+        question: 'How important is having a mentor guide you through this transition?',
         options: [
-            { text: 'Very — I want guidance', value: 'yes' },
+            { text: 'Very important — I want personalised support', value: 'yes' },
             { text: 'I prefer to learn independently', value: 'no' }
         ]
     },
     {
         id: 'q5',
-        question: "What's your biggest concern about making a career change?",
+        question: 'What is your biggest concern about making a career change?',
         options: [
-            { text: 'Cost / financial commitment', value: 'cost' },
-            { text: "Time — can't commit to long training", value: 'time' },
-            { text: "I'm not qualified enough for tech", value: 'qualify' },
-            { text: 'Finding real job opportunities', value: 'opportunity' }
+            { text: 'The financial investment required', value: 'cost' },
+            { text: 'Finding the time while still working', value: 'time' },
+            { text: 'Whether I am qualified enough for tech roles', value: 'qualify' },
+            { text: 'Finding genuine job opportunities', value: 'opportunity' }
         ]
     }
 ];
@@ -146,60 +143,60 @@ function showQuestion(index) {
         const label = document.createElement('label');
         label.style.cssText = `
             display:flex; align-items:center; gap:12px;
-            padding:12px 16px; border:1.5px solid #E2D9CE;
-            border-radius:8px; cursor:pointer; transition:all 0.18s;
-            font-size:14px; color:#3D3D3D; font-family:inherit;
-            background:#FAF7F2;
+            padding:12px 16px;
+            border:1.5px solid #e4e8ef;
+            border-radius:6px; cursor:pointer;
+            transition:all 0.18s;
+            font-size:14px; color:#3d4a5c;
+            font-family:Inter,sans-serif;
+            background:#fafafa;
+            user-select:none;
         `;
 
         const radio = document.createElement('input');
         radio.type = 'radio';
-        radio.name = `quiz_${index}`;
+        radio.name = `q_${index}`;
         radio.value = opt.value;
-        radio.style.cssText = 'accent-color:#C4714A; width:16px; height:16px; flex-shrink:0;';
-        if (quizAnswers[q.id] === opt.value) radio.checked = true;
+        radio.style.cssText = 'accent-color:#cca197; width:15px; height:15px; flex-shrink:0;';
+        if (quizAnswers[q.id] === opt.value) {
+            radio.checked = true;
+            label.style.borderColor = '#cca197';
+            label.style.background = 'rgba(204,161,151,0.07)';
+        }
 
         radio.addEventListener('change', () => {
             container.querySelectorAll('label').forEach(l => {
-                l.style.borderColor = '#E2D9CE';
-                l.style.background = '#FAF7F2';
+                l.style.borderColor = '#e4e8ef';
+                l.style.background = '#fafafa';
             });
-            label.style.borderColor = '#C4714A';
-            label.style.background = 'rgba(196,113,74,0.07)';
+            label.style.borderColor = '#cca197';
+            label.style.background = 'rgba(204,161,151,0.07)';
         });
 
         label.addEventListener('mouseover', () => {
-            if (!radio.checked) { label.style.borderColor = '#C4714A'; label.style.background = 'rgba(196,113,74,0.04)'; }
+            if (!radio.checked) label.style.borderColor = '#cca197';
         });
         label.addEventListener('mouseout', () => {
-            if (!radio.checked) { label.style.borderColor = '#E2D9CE'; label.style.background = '#FAF7F2'; }
+            if (!radio.checked) label.style.borderColor = '#e4e8ef';
         });
 
-        const span = document.createElement('span');
-        span.textContent = opt.text;
-
         label.appendChild(radio);
-        label.appendChild(span);
+        label.appendChild(document.createTextNode(opt.text));
         container.appendChild(label);
-
-        // Restore selected state
-        if (quizAnswers[q.id] === opt.value) {
-            label.style.borderColor = '#C4714A';
-            label.style.background = 'rgba(196,113,74,0.07)';
-        }
     });
 
-    document.getElementById('backBtn').style.display = index === 0 ? 'none' : 'flex';
-    document.getElementById('nextBtn').textContent = index === quizQuestions.length - 1 ? 'See My Results →' : 'Next →';
+    document.getElementById('backBtn').style.display = index === 0 ? 'none' : 'inline-flex';
+    document.getElementById('nextBtn').textContent = index === quizQuestions.length - 1 ? 'See My Results' : 'Next';
 }
 
 function handleQuizNext(event) {
     event.preventDefault();
-    const selected = document.querySelector(`input[name="quiz_${currentQuestion}"]:checked`);
+    const selected = document.querySelector(`input[name="q_${currentQuestion}"]:checked`);
     if (!selected) {
-        // Highlight that a selection is needed
-        document.getElementById('optionsContainer').style.outline = '2px solid #C4714A';
-        setTimeout(() => document.getElementById('optionsContainer').style.outline = 'none', 800);
+        const container = document.getElementById('optionsContainer');
+        container.style.outline = '2px solid #cca197';
+        container.style.borderRadius = '8px';
+        setTimeout(() => { container.style.outline = 'none'; }, 900);
         return;
     }
     quizAnswers[quizQuestions[currentQuestion].id] = selected.value;
@@ -216,71 +213,57 @@ function goToPreviousQuestion() {
 }
 
 function showQuizResults() {
-    let score = 0;
-    if (quizAnswers.q1 === 'yes') score++;
-    if (quizAnswers.q2 === 'yes') score++;
-    if (quizAnswers.q3 === 'yes') score++;
-    if (quizAnswers.q4 === 'yes') score++;
+    let score = ['q1','q2','q3','q4'].filter(k => quizAnswers[k] === 'yes').length;
 
-    let result = '';
+    let result;
     if (score >= 4) {
-        result = "You're an excellent fit. You have the experience, the drive, and the mindset for this transition. You can start as soon as you're ready — and your insider understanding of dentistry is a genuine competitive advantage.";
+        result = "You are an excellent fit. You have the experience, the clarity, and the mindset for this transition. Your years inside the dental industry are a genuine competitive advantage — most candidates applying for these roles simply do not have it.";
     } else if (score === 3) {
-        result = "You're a great fit. You have what it takes. The main thing that would help you right now is clarity on which specific tech roles are the best match for your background — that's exactly what the discovery call is for.";
+        result = "You are a strong fit. You have what it takes to make this transition. A discovery call would help identify which specific roles align best with your particular background and goals.";
     } else if (score === 2) {
-        result = "You're a good fit, and the main thing holding you back is probably just lack of clarity or confidence about tech. That's the #1 thing we help with — and it shifts faster than you'd expect.";
+        result = "You are a good fit, and the main thing holding you back is likely a lack of clarity — not capability. That is precisely what this program addresses, and it tends to shift quickly once you have the right guidance.";
     } else {
-        result = "It sounds like you're still exploring — and that's completely okay. Our free resources are the perfect starting point. Download the AI Starter Guide and see if this path excites you.";
+        result = "It sounds like you are still in the exploration phase, and that is completely fine. The free resources are the best starting point. Download the AI Starter Guide and see whether this path resonates with you.";
     }
 
     const concerns = {
-        cost: " Your biggest concern is cost — which makes complete sense. But this program is $497, not $40K+. It's designed to be accessible for working hygienists.",
-        time: " Time is your concern. The program is 5–8 hours per week for 6 weeks, designed specifically for people who are still working full-time.",
-        qualify: " You're worried about whether you're qualified. This is the #1 doubt we hear — and it's almost always the thing that shifts most during the program. You're more qualified than you think.",
-        opportunity: " Finding real jobs is your concern. That's exactly why we built direct company introductions into the program. You're not cold-applying — you're being referred."
+        cost:        " Regarding cost: this program is $497, not $40,000. It is designed to be accessible for working professionals at every stage.",
+        time:        " Regarding time: the program requires 5 to 8 hours per week over 6 weeks — designed specifically for people who are still working full-time.",
+        qualify:     " Regarding qualifications: this is the most common concern we hear, and it is almost always the thing that shifts most during the program. Your clinical background is more relevant than you think.",
+        opportunity: " Regarding job opportunities: direct company introductions are built into the program. You will not be cold-applying — you will be referred by someone the industry already trusts."
     };
     if (concerns[quizAnswers.q5]) result += concerns[quizAnswers.q5];
 
     document.getElementById('quizForm').style.display = 'none';
     document.getElementById('quizProgress').style.display = 'none';
-    document.getElementById('quizResultsScreen').style.display = 'block';
+    const screen = document.getElementById('quizResultsScreen');
+    screen.style.display = 'block';
     document.getElementById('resultsText').textContent = result;
 }
 
-// ── Form Handlers
-function downloadGuide(event) {
-    event.preventDefault();
-    const email = event.target.querySelector('input[type="email"]').value;
-    showSuccess(event.target, `Thanks! Check ${email} for your download.`);
-}
-function subscribeNewsletter(event) {
-    event.preventDefault();
-    const email = event.target.querySelector('input[type="email"]').value;
-    showSuccess(event.target, `Welcome! You're subscribed at ${email}.`);
-}
-function handleEnrollment(event) {
-    event.preventDefault();
-    const name = event.target.querySelector('input[type="text"]').value;
-    showSuccess(event.target, `Thanks, ${name}! Maria will be in touch within 24 hours.`);
-}
-function showSuccess(form, message) {
-    form.innerHTML = `
-        <div style="text-align:center;padding:1rem 0;">
-            <div style="font-size:2.5rem;margin-bottom:1rem;">✅</div>
-            <p style="color:#1A1A1A;font-size:16px;font-weight:600;">${message}</p>
-        </div>
-    `;
+// ── Form handlers
+function showSuccess(form, msg) {
+    form.innerHTML = `<div style="text-align:center;padding:1.5rem 0;">
+        <p style="font-size:28px;margin-bottom:0.75rem;">&#10003;</p>
+        <p style="font-size:15px;font-weight:600;color:#222d44;">${msg}</p>
+    </div>`;
     setTimeout(() => {
         const modal = form.closest('.modal');
         if (modal) closeModal(modal.id.replace('Modal', ''));
-    }, 2500);
+    }, 2600);
 }
-
-// ── Analytics
-document.querySelectorAll('.btn-primary, .btn-nav-cta').forEach(btn => {
-    btn.addEventListener('click', function() {
-        console.log('[CTA]', this.textContent.trim());
-    });
-});
-
-console.log('%c Maria · Dental AI Solutions', 'color:#C4714A;font-size:16px;font-weight:bold;');
+function downloadGuide(e) {
+    e.preventDefault();
+    const email = e.target.querySelector('input[type="email"]').value;
+    showSuccess(e.target, `Check ${email} — your resource is on its way.`);
+}
+function subscribeNewsletter(e) {
+    e.preventDefault();
+    const email = e.target.querySelector('input[type="email"]').value;
+    showSuccess(e.target, `You are subscribed. Welcome to the community, ${email}.`);
+}
+function handleEnrollment(e) {
+    e.preventDefault();
+    const name = e.target.querySelector('input[type="text"]').value;
+    showSuccess(e.target, `Thank you, ${name}. Maria will be in touch within 24 hours.`);
+}

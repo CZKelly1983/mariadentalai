@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maria | Dental Hygienist → Tech Career Mentor</title>
-    <meta name="description" content="Tired of the operatory? Transform your dental hygiene expertise into a flexible remote career in Dental AI & Tech — in 6 weeks, not 2 years.">
+    <title>From Chairside to AI | Maria Jackson · Dental AI Solutions</title>
+    <meta name="description" content="From Chairside to AI — Build a flexible remote career in Dental AI & Tech without going back to school. Guidance from Maria Jackson, 20+ years in dentistry.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Sticky Navigation -->
+    <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="nav-brand">
-                <span class="brand-dot"></span>
-                Maria · Dental AI
+                <img src="logo-placeholder.png" alt="Dental AI Solutions" class="nav-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span class="nav-logo-fallback">Dental AI Solutions</span>
             </a>
             <div class="nav-menu-toggle" id="mobileMenuToggle">
                 <span></span><span></span><span></span>
@@ -26,67 +26,72 @@
                 <li><a href="#free-resources" class="nav-link">Free Resources</a></li>
                 <li><a href="#programs" class="nav-link">Programs</a></li>
                 <li><a href="#about" class="nav-link">About Maria</a></li>
-                <li><button class="btn-nav-cta" onclick="openModal('call')">Book Free Call →</button></li>
+                <li><button class="btn-nav-cta" onclick="openModal('call')">Book Free Consultation</button></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="hero" class="hero">
-        <div class="hero-bg-blob blob-1"></div>
-        <div class="hero-bg-blob blob-2"></div>
-        <div class="container">
-            <div class="hero-eyebrow">
-                <span class="eyebrow-dot"></span>
-                For dental hygienists ready for more
+        <div class="hero-gradient-bg"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <p class="hero-kicker">For dental professionals ready for what's next</p>
+                <h1>
+                    From Chairside<br>
+                    <em>to AI.</em>
+                </h1>
+                <p class="hero-subtitle">Build a flexible remote career in Dental AI &amp; Tech — without going back to school, without starting over, and without doing it alone.</p>
+                <div class="hero-ctas">
+                    <button class="btn btn-primary" onclick="openModal('quiz')">Take the 2-Min Fit Quiz</button>
+                    <button class="btn btn-outline-hero" onclick="openModal('guide')">Get the Free Starter Guide</button>
+                </div>
+                <div class="hero-proof">
+                    <div class="proof-avatars">
+                        <div class="proof-av">MJ</div>
+                        <div class="proof-av">RH</div>
+                        <div class="proof-av">JV</div>
+                        <div class="proof-av proof-more">100+</div>
+                    </div>
+                    <p>dental professionals have already made the leap.</p>
+                </div>
             </div>
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <h1>
-                        Your years in the chair<br>
-                        <em>are a tech superpower.</em>
-                    </h1>
-                    <p class="hero-subtitle">Build a flexible remote career in Dental AI & Tech — without going back to school, without starting over, and without doing it alone.</p>
-                    <div class="hero-ctas">
-                        <button class="btn btn-primary" onclick="openModal('quiz')">
-                            Take the 2-Min Fit Quiz
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                        </button>
-                        <button class="btn btn-ghost" onclick="openModal('guide')">Get the Free Starter Guide</button>
-                    </div>
-                    <div class="hero-social-proof">
-                        <div class="proof-avatars">
-                            <div class="proof-avatar">RH</div>
-                            <div class="proof-avatar">JV</div>
-                            <div class="proof-avatar">CF</div>
-                            <div class="proof-avatar proof-more">+97</div>
-                        </div>
-                        <p>100+ hygienists have already made the leap.</p>
-                    </div>
+            <div class="hero-visual">
+                <div class="hero-photo-frame">
+                    <div class="photo-placeholder">Maria's Photo</div>
                 </div>
-                <div class="hero-visual">
-                    <div class="hero-card-stack">
-                        <div class="floating-card card-top">
-                            <div class="card-icon">🎯</div>
-                            <div>
-                                <strong>Direct job referrals</strong>
-                                <span>Not cold applications</span>
-                            </div>
-                        </div>
-                        <div class="hero-photo-box">
-                            <div class="photo-placeholder">
-                                <p>Maria's Photo</p>
-                            </div>
-                        </div>
-                        <div class="floating-card card-bottom">
-                            <div class="card-icon">⚡</div>
-                            <div>
-                                <strong>6 weeks, part-time</strong>
-                                <span>Not 2 years full-time</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="hero-stat-card stat-top">
+                    <span class="stat-number">6 weeks</span>
+                    <span class="stat-label">Part-time, not 2 years full-time</span>
                 </div>
+                <div class="hero-stat-card stat-bottom">
+                    <span class="stat-number">Direct referrals</span>
+                    <span class="stat-label">Not cold applications</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-ticker">
+            <div class="ticker-track">
+                <span>20+ Years in Dentistry</span>
+                <span class="ticker-dot"></span>
+                <span>Speaker &amp; Educator</span>
+                <span class="ticker-dot"></span>
+                <span>AI Company Collaborator</span>
+                <span class="ticker-dot"></span>
+                <span>Opening Doors for Clinicians</span>
+                <span class="ticker-dot"></span>
+                <span>From Chairside to AI</span>
+                <span class="ticker-dot"></span>
+                <span>20+ Years in Dentistry</span>
+                <span class="ticker-dot"></span>
+                <span>Speaker &amp; Educator</span>
+                <span class="ticker-dot"></span>
+                <span>AI Company Collaborator</span>
+                <span class="ticker-dot"></span>
+                <span>Opening Doors for Clinicians</span>
+                <span class="ticker-dot"></span>
+                <span>From Chairside to AI</span>
+                <span class="ticker-dot"></span>
             </div>
         </div>
     </section>
@@ -94,11 +99,11 @@
     <!-- Empathy Banner -->
     <div class="empathy-banner">
         <div class="container">
-            <p>"Burnt out. Underpaid. Wondering if there's <em>more</em> for me out there." — Sound familiar?</p>
+            <p>Feeling stuck in the same clinical routine, craving flexibility and a career that grows with you — but not sure where to turn?</p>
         </div>
     </div>
 
-    <!-- Is This For You? -->
+    <!-- Is This For You -->
     <section id="is-this-for-you" class="section is-for-you">
         <div class="container">
             <div class="section-header">
@@ -107,36 +112,45 @@
             </div>
             <div class="two-col-cards">
                 <div class="fit-card">
-                    <div class="fit-card-icon">😮‍💨</div>
-                    <h3>You're feeling…</h3>
+                    <div class="fit-card-top">
+                        <div class="fit-card-rule"></div>
+                        <h3>You're feeling…</h3>
+                    </div>
                     <ul class="check-list">
                         <li>Burnt out from the daily clinical grind</li>
-                        <li>Like your expertise should mean more</li>
-                        <li>Curious about what else is possible</li>
-                        <li>Ready for flexibility and remote work</li>
-                        <li>Unsure where to even start</li>
+                        <li>Stuck in the same routine with no clear path forward</li>
+                        <li>Like your expertise and experience should mean more</li>
+                        <li>Ready for the flexibility to work on your own terms</li>
+                        <li>Curious about what the AI space has to offer you</li>
                     </ul>
                 </div>
                 <div class="fit-card">
-                    <div class="fit-card-icon">🤔</div>
-                    <h3>You're wondering…</h3>
+                    <div class="fit-card-top">
+                        <div class="fit-card-rule"></div>
+                        <h3>You're wondering…</h3>
+                    </div>
                     <ul class="check-list">
-                        <li>"Am I even qualified for tech?"</li>
-                        <li>"Do I have to go back to school?"</li>
-                        <li>"Can I do this while still working?"</li>
-                        <li>"How much will this actually cost?"</li>
-                        <li>"Is there genuinely a path for me?"</li>
+                        <li>"Am I even qualified for a tech role?"</li>
+                        <li>"Do I have to go back to school to make this happen?"</li>
+                        <li>"Can I realistically do this while still working?"</li>
+                        <li>"What does this actually cost, and is it worth it?"</li>
+                        <li>"Is there genuinely a path forward for someone like me?"</li>
                     </ul>
                 </div>
             </div>
             <div class="quiz-cta-block">
-                <p>Not sure if this is right for you? Take the quiz — it takes 2 minutes and gives you a personalised roadmap.</p>
-                <button class="btn btn-primary" onclick="openModal('quiz')">Find Out If You're a Fit →</button>
+                <div class="quiz-cta-inner">
+                    <div>
+                        <h3>Not sure if this is right for you?</h3>
+                        <p>Take the 2-minute quiz and get a personalised roadmap based on your background.</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="openModal('quiz')">Find Out If You're a Fit</button>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- What Actually Changes -->
+    <!-- What Changes -->
     <section class="section what-changes">
         <div class="container">
             <div class="section-header centered">
@@ -148,76 +162,72 @@
                     <div class="change-num">01</div>
                     <div class="change-body">
                         <h3>You stop feeling lost</h3>
-                        <p>Clear path. Concrete next steps. No more "where do I even start?" — you'll know exactly what to do and in what order.</p>
+                        <p>A clear path with concrete next steps. No more wondering where to start — you'll know exactly what to do and in what order.</p>
                     </div>
                 </div>
                 <div class="change-item">
                     <div class="change-num">02</div>
                     <div class="change-body">
                         <h3>You become genuinely confident</h3>
-                        <p>Real confidence from understanding AI tools, speaking the language, and knowing you're prepared for what comes next.</p>
+                        <p>Real confidence built on real skills — understanding AI tools, speaking the language, and knowing you're prepared for what's ahead.</p>
                     </div>
                 </div>
                 <div class="change-item">
                     <div class="change-num">03</div>
                     <div class="change-body">
                         <h3>Doors actually open</h3>
-                        <p>Real introductions to companies that value hygienists. You're not cold-applying — you're being referred by someone they trust.</p>
+                        <p>Direct introductions to companies that value dental professionals. You're not cold-applying — you're being referred by someone they trust.</p>
                     </div>
                 </div>
                 <div class="change-item">
                     <div class="change-num">04</div>
                     <div class="change-body">
-                        <h3>You reclaim your narrative</h3>
-                        <p>Those years in dentistry? That's your competitive advantage. Learn to position them as the asset they truly are.</p>
+                        <h3>Your experience becomes your edge</h3>
+                        <p>Those years at chairside are your competitive advantage in the AI space. Learn to position your clinical background as the asset it truly is.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Free Resources Section -->
+    <!-- Free Resources -->
     <section id="free-resources" class="section free-resources">
         <div class="container">
             <div class="section-header centered">
-                <p class="section-label">No strings attached</p>
+                <p class="section-label">No commitment required</p>
                 <h2>Start here — completely free</h2>
-                <p class="section-desc">These resources have helped 100+ hygienists take their first step.</p>
+                <p class="section-desc">Resources that have helped 100+ dental professionals take their first step.</p>
             </div>
             <div class="resources-grid">
                 <div class="resource-card">
-                    <div class="resource-tag">PDF Guide</div>
-                    <div class="resource-icon">📘</div>
+                    <div class="resource-type">PDF Guide</div>
                     <h3>AI Starter Guide</h3>
-                    <p>Everything about AI in dental tech — explained for hygienists. No jargon, just practical steps you can take this week.</p>
-                    <button class="btn btn-outline-accent" onclick="openModal('guide')">Download Free →</button>
+                    <p>Everything you need to know about AI in dental tech — explained for clinicians, not coders. No jargon, all practical.</p>
+                    <button class="btn btn-resource" onclick="openModal('guide')">Download Free</button>
                 </div>
                 <div class="resource-card">
-                    <div class="resource-tag">Checklist</div>
-                    <div class="resource-icon">✅</div>
+                    <div class="resource-type">Checklist</div>
                     <h3>5 Skills You Already Have</h3>
-                    <p>See exactly how your clinical expertise translates to in-demand tech roles. This one usually surprises people.</p>
-                    <button class="btn btn-outline-accent" onclick="openModal('skills')">Get the Checklist →</button>
+                    <p>A checklist showing exactly how your clinical background translates into in-demand tech roles. This one surprises most people.</p>
+                    <button class="btn btn-resource" onclick="openModal('skills')">Get the Checklist</button>
                 </div>
-                <div class="resource-card resource-featured">
-                    <div class="resource-tag tag-highlight">Most Watched</div>
-                    <div class="resource-icon">🎬</div>
+                <div class="resource-card resource-card-featured">
+                    <div class="resource-type resource-type-light">Most Watched</div>
                     <h3>Video Series: Your Path</h3>
-                    <p>Short 2–3 min videos on AI basics, real career options, and what to actually expect. Watch on your lunch break.</p>
-                    <button class="btn btn-primary" onclick="openModal('videos')">Watch Now →</button>
+                    <p>Short 2–3 minute videos covering AI basics, real career options, and what to genuinely expect. Watch on your own schedule.</p>
+                    <button class="btn btn-resource-featured" onclick="openModal('videos')">Watch Now</button>
                 </div>
                 <div class="resource-card">
-                    <div class="resource-tag">Community</div>
-                    <div class="resource-icon">💬</div>
-                    <h3>Weekly Insights</h3>
-                    <p>Emerging AI roles, training tips, and early access to new programs — straight to your inbox every week.</p>
-                    <button class="btn btn-outline-accent" onclick="openModal('newsletter')">Join Free →</button>
+                    <div class="resource-type">Weekly Insights</div>
+                    <h3>Insider Newsletter</h3>
+                    <p>Emerging AI roles, training updates, and early access to new programs — delivered to your inbox every week.</p>
+                    <button class="btn btn-resource" onclick="openModal('newsletter')">Subscribe Free</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Programs Section -->
+    <!-- Programs -->
     <section id="programs" class="section programs">
         <div class="container">
             <div class="section-header centered">
@@ -227,64 +237,67 @@
             </div>
             <div class="programs-grid">
                 <div class="program-card">
-                    <div class="program-label">Free</div>
+                    <div class="program-badge">Free</div>
                     <h3>Discovery Call</h3>
-                    <p>No pitch, no pressure. We'll figure out what's possible and whether we're a good fit together.</p>
+                    <p>No pitch. No pressure. A genuine conversation to understand what's possible and whether we're a good fit to work together.</p>
                     <div class="program-price">$0</div>
                     <ul class="feature-list">
-                        <li>Understand your unique situation</li>
-                        <li>Explore real roles that fit you</li>
-                        <li>Get honest, unfiltered feedback</li>
+                        <li>Understand your unique background</li>
+                        <li>Explore real roles that suit you</li>
+                        <li>Receive honest, direct feedback</li>
                     </ul>
-                    <button class="btn btn-outline-dark" onclick="openModal('call')">Book 15-Min Call</button>
+                    <button class="btn btn-program-outline" onclick="openModal('call')">Book 15-Min Call</button>
                 </div>
                 <div class="program-card program-featured">
-                    <div class="program-label label-featured">Most Popular</div>
-                    <h3>Career Transformation</h3>
-                    <p>6 weeks of intensive, personalised support. Go from "what's possible?" to "I'm ready for interviews."</p>
+                    <div class="program-badge badge-featured">Most Popular</div>
+                    <h3>Career Transformation Program</h3>
+                    <p>6 weeks of intensive, personalised support. From "what's possible?" to "I'm ready for interviews."</p>
                     <div class="program-price">$497 <span>or 2×$297</span></div>
-                    <div class="program-meta">5–8 hrs/week · 6 weeks · Part-time friendly</div>
+                    <div class="program-commitment">5–8 hrs/week · 6 weeks · Part-time friendly</div>
                     <ul class="feature-list">
-                        <li>AI Foundations (4 core modules)</li>
-                        <li>Resume & LinkedIn transformation</li>
+                        <li>AI Foundations — 4 core modules</li>
+                        <li>Resume and LinkedIn transformation</li>
                         <li>2 one-on-one coaching sessions</li>
-                        <li>Direct introductions to companies</li>
-                        <li>Interview prep & ongoing support</li>
+                        <li>Direct company introductions</li>
+                        <li>Interview preparation and support</li>
                     </ul>
-                    <button class="btn btn-primary" onclick="openModal('enroll')">Enrol Now →</button>
+                    <button class="btn btn-primary" onclick="openModal('enroll')">Enrol Now</button>
                 </div>
                 <div class="program-card">
-                    <div class="program-label">Premium</div>
+                    <div class="program-badge">Premium</div>
                     <h3>Ongoing Mentorship</h3>
-                    <p>Weekly one-on-one calls from first step to job offer. For those who want hands-on, continuous support.</p>
+                    <p>Weekly one-on-one calls from your first step to your job offer. For those who want continuous, hands-on support throughout.</p>
                     <div class="program-price">Custom</div>
                     <ul class="feature-list">
-                        <li>Weekly coaching calls</li>
+                        <li>Weekly coaching sessions</li>
                         <li>Long-term career strategy</li>
                         <li>Interview preparation</li>
                         <li>Ongoing network access</li>
                     </ul>
-                    <button class="btn btn-outline-dark" onclick="openModal('call')">Let's Talk</button>
+                    <button class="btn btn-program-outline" onclick="openModal('call')">Let's Talk</button>
                 </div>
             </div>
 
             <div class="comparison-block">
-                <h3>Why not just get another degree?</h3>
+                <div class="comparison-header">
+                    <h3>Why not just get another degree?</h3>
+                    <p>Maria has one. She'll tell you herself — you shouldn't need it.</p>
+                </div>
                 <div class="comparison-table-wrap">
                     <table>
                         <thead>
                             <tr>
                                 <th>Factor</th>
-                                <th class="col-bad">Master's Degree</th>
+                                <th>Master's Degree</th>
                                 <th class="col-good">Maria's Program</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>Cost</td><td class="col-bad">$40,000–$80,000</td><td class="col-good">$497</td></tr>
-                            <tr><td>Time</td><td class="col-bad">2 years, full-time</td><td class="col-good">6 weeks, part-time</td></tr>
-                            <tr><td>Direct Job Introductions</td><td class="col-bad">✗ No</td><td class="col-good">✓ Yes</td></tr>
-                            <tr><td>1-on-1 Support</td><td class="col-bad">Rarely</td><td class="col-good">Built in</td></tr>
-                            <tr><td>Dental AI Focus</td><td class="col-bad">Generic</td><td class="col-good">Specialised</td></tr>
+                            <tr><td>Cost</td><td>$40,000–$80,000</td><td class="col-good">$497</td></tr>
+                            <tr><td>Time Required</td><td>2 years, full-time</td><td class="col-good">6 weeks, part-time</td></tr>
+                            <tr><td>Direct Job Introductions</td><td>No</td><td class="col-good">Yes — built in</td></tr>
+                            <tr><td>One-on-One Support</td><td>Rarely</td><td class="col-good">Personalised coaching</td></tr>
+                            <tr><td>Dental AI Specialisation</td><td>Generic curriculum</td><td class="col-good">Purpose-built for clinicians</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -292,44 +305,44 @@
         </div>
     </section>
 
-    <!-- Success Stories -->
+    <!-- Testimonials -->
     <section id="success-stories" class="section success-stories">
         <div class="container">
             <div class="section-header centered">
-                <p class="section-label">Real people, real results</p>
-                <h2>Hygienists who've made the leap</h2>
+                <p class="section-label">Real results</p>
+                <h2>Professionals who've made the leap</h2>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial">
-                    <div class="quote-mark">"</div>
-                    <p class="testimonial-text">I was overwhelmed and unsure of myself. Maria's guidance completely transformed my experience. She patiently showed me not just how, but why. I'm so confident now. I'm genuinely grateful.</p>
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">I was overwhelmed and unsure of myself. Maria's guidance completely transformed my experience. She patiently showed me not just how, but why, and encouraged me every step of the way. I'm so confident now — I'm genuinely grateful.</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">CF</div>
+                        <div class="author-initials">CF</div>
                         <div>
-                            <p class="author-name">Ceydel Fundora</p>
-                            <p class="author-role">CRDH → Career Transitioner</p>
+                            <p class="author-name">Ceydel Fundora, CRDH</p>
+                            <p class="author-role">Career Transitioner</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial">
-                    <div class="quote-mark">"</div>
-                    <p class="testimonial-text">Maria was an incredible mentor from day one. She made me feel confident, supported, and truly welcomed. Her guidance was patient, judgment-free, and rooted in genuine care for my success.</p>
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">Maria was an incredible mentor from day one. She made me feel confident, supported, and truly welcomed. Her guidance was patient, judgment-free, and rooted in a genuine desire to see me succeed.</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">JV</div>
+                        <div class="author-initials">JV</div>
                         <div>
-                            <p class="author-name">Jenny Vasquez</p>
-                            <p class="author-role">CRDH → Dental Tech</p>
+                            <p class="author-name">Jenny Vasquez, CRDH</p>
+                            <p class="author-role">Dental Tech Professional</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial">
-                    <div class="quote-mark">"</div>
-                    <p class="testimonial-text">Maria trained our entire team on AI adoption. She doesn't just teach skills — she gives people permission to see themselves as tech-capable. That mindset shift is invaluable.</p>
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">Maria trained our entire team on technology adoption. She doesn't just teach skills — she gives people permission to see themselves as tech-capable. That mindset shift is absolutely invaluable.</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">CD</div>
+                        <div class="author-initials">CD</div>
                         <div>
-                            <p class="author-name">Clinical Director</p>
-                            <p class="author-role">Large Dental Organisation</p>
+                            <p class="author-name">Managing Clinical Director, DMD</p>
+                            <p class="author-role">Large Dental Organisation (DSO)</p>
                         </div>
                     </div>
                 </div>
@@ -341,37 +354,38 @@
     <section id="about" class="section about">
         <div class="container">
             <div class="about-grid">
-                <div class="about-photo-side">
-                    <div class="about-photo-wrap">
+                <div class="about-photo-col">
+                    <div class="about-photo-frame">
                         <div class="about-photo-placeholder">Maria's Photo</div>
                     </div>
                     <div class="about-stats">
-                        <div class="stat-item">
-                            <strong>15+</strong>
-                            <span>Years as a hygienist</span>
+                        <div class="stat-box">
+                            <strong>20+</strong>
+                            <span>Years in dentistry</span>
                         </div>
-                        <div class="stat-item">
+                        <div class="stat-box">
                             <strong>30+</strong>
                             <span>Offices trained</span>
                         </div>
-                        <div class="stat-item">
+                        <div class="stat-box">
                             <strong>40+</strong>
-                            <span>Hygienists mentored</span>
+                            <span>Clinicians mentored</span>
                         </div>
                     </div>
                 </div>
                 <div class="about-content">
-                    <p class="section-label">About Maria</p>
-                    <h2>She's been exactly where you are.</h2>
-                    <p>I spent 15 years as a dental hygienist. I loved the work — but somewhere along the way, I started wondering if there was more for me.</p>
-                    <p>So I did what seemed necessary: I went back to school and earned a Master's degree in Applied Digital Technology with a focus on AI and Business Analytics. It worked. But it shouldn't have had to be that way.</p>
-                    <p>After training 30+ dental offices, mentoring dozens of hygienists into tech roles, and partnering with leading AI companies, I know this: <strong>you don't need another degree. You need clarity, skills, and someone who genuinely gets your journey.</strong></p>
-                    <p>That's why I created Dental AI Solutions.</p>
-                    <div class="credentials-grid">
-                        <div class="cred-item"><span class="cred-icon">🎓</span> Master's in Applied Digital Technology (AI & Analytics)</div>
-                        <div class="cred-item"><span class="cred-icon">🏥</span> Trained 30+ dental offices on AI technology</div>
-                        <div class="cred-item"><span class="cred-icon">🤝</span> Mentored 40+ hygienists into tech roles</div>
-                        <div class="cred-item"><span class="cred-icon">🎤</span> Speaker at industry events & podcasts</div>
+                    <p class="section-label">About Maria Jackson</p>
+                    <h2>The hygienist leading the future of dental AI careers.</h2>
+                    <p>Maria spent more than 20 years in dentistry, 15+ as a practicing hygienist. But even with deep clinical expertise, she found herself unseen and undervalued by the tech industry.</p>
+                    <p>So she did what most clinicians should never have to do: went back to school to earn a Master's Degree in Applied Digital Technology with a concentration in AI and Business Analytics — just to be taken seriously.</p>
+                    <p>Once inside the AI world, she trained teams, mentored hygienists, spoke at industry events, and partnered with AI companies. And she realised something important: <strong>no dental professional should need another degree to transition into tech. They just need support, access, and someone who knows the way.</strong></p>
+                    <p class="about-quote">"What was once my struggle is now your advantage. That is why Dental AI Solutions was created."</p>
+                    <div class="credentials-list">
+                        <div class="cred-item">Master's in Applied Digital Technology — AI &amp; Analytics</div>
+                        <div class="cred-item">Trained hygiene teams across 30+ dental offices</div>
+                        <div class="cred-item">Mentored 40+ clinicians into AI and tech roles</div>
+                        <div class="cred-item">Speaker at industry events, schools and podcasts</div>
+                        <div class="cred-item">Partner with leading dental AI companies</div>
                     </div>
                 </div>
             </div>
@@ -380,13 +394,14 @@
 
     <!-- Final CTA -->
     <section class="cta-final">
+        <div class="cta-bg-pattern"></div>
         <div class="container">
             <div class="cta-inner">
-                <p class="cta-pre">Ready to explore what's possible?</p>
+                <p class="cta-kicker">Ready to explore what's possible?</p>
                 <h2>Let's figure out your next chapter — together.</h2>
-                <p class="cta-sub">Book a free, no-pressure discovery call. 15 minutes. No obligation. Just clarity.</p>
-                <button class="btn btn-cta-white" onclick="openModal('call')">Book Your Free Call →</button>
-                <p class="cta-email">Or email me: <a href="mailto:maria.dentalai@gmail.com">maria.dentalai@gmail.com</a></p>
+                <p class="cta-sub">Schedule a free consultation. No obligation, no pressure — just an honest conversation about your options.</p>
+                <button class="btn btn-cta-light" onclick="openModal('call')">Schedule My Free Consultation</button>
+                <p class="cta-email">Or reach me directly: <a href="mailto:maria.dentalai@gmail.com">maria.dentalai@gmail.com</a></p>
             </div>
         </div>
     </section>
@@ -394,12 +409,17 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand"><span class="brand-dot"></span> Maria · Dental AI Solutions</div>
-                <p class="footer-tagline">Helping hygienists build careers beyond the operatory.</p>
-            </div>
-            <div class="footer-links">
-                <div class="footer-col">
+            <div class="footer-inner">
+                <div class="footer-brand-col">
+                    <p class="footer-brand">Dental AI Solutions</p>
+                    <p class="footer-tagline">Helping dental professionals build careers beyond the operatory.</p>
+                    <div class="footer-social">
+                        <a href="https://linkedin.com/in/mariadentalai" target="_blank">LinkedIn</a>
+                        <a href="https://instagram.com/dental.ai.solutions" target="_blank">Instagram</a>
+                        <a href="https://tiktok.com/@dental.ai.solution" target="_blank">TikTok</a>
+                    </div>
+                </div>
+                <div class="footer-links-col">
                     <h4>Programs</h4>
                     <ul>
                         <li><a href="#programs">Discovery Call</a></li>
@@ -407,145 +427,136 @@
                         <li><a href="#programs">Ongoing Mentorship</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
+                <div class="footer-links-col">
                     <h4>Resources</h4>
                     <ul>
-                        <li><a href="#free-resources">Free Guides</a></li>
+                        <li><a href="#free-resources">AI Starter Guide</a></li>
                         <li><a href="#free-resources">Video Series</a></li>
                         <li><a href="#free-resources">Newsletter</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
+                <div class="footer-links-col">
                     <h4>Company</h4>
                     <ul>
                         <li><a href="#about">About Maria</a></li>
                         <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
                         <li><a href="mailto:maria.dentalai@gmail.com">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Connect</h4>
-                    <ul>
-                        <li><a href="https://linkedin.com/in/mariadentalai" target="_blank">LinkedIn</a></li>
-                        <li><a href="https://instagram.com/dental.ai.solutions" target="_blank">Instagram</a></li>
-                        <li><a href="https://tiktok.com/@dental.ai.solution" target="_blank">TikTok</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 Dental AI Solutions · Built with ❤️ for hygienists ready for more.</p>
+                <p>© 2025 Dental AI Solutions. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- MODALS -->
+
     <div id="quizModal" class="modal">
         <div class="modal-content modal-quiz">
-            <button class="modal-close" onclick="closeModal('quiz')">×</button>
-            <div class="quiz-header">
-                <p class="modal-label">Quick Fit Quiz</p>
-                <h3>Is this the right path for you?</h3>
-            </div>
+            <button class="modal-close" onclick="closeModal('quiz')">&#x2715;</button>
+            <p class="modal-kicker">Quick Fit Quiz</p>
+            <h3>Is this the right path for you?</h3>
             <div id="quizProgress">
-                <div class="progress-meta">
+                <div class="quiz-progress-meta">
                     <span id="questionNumber">Question 1 of 5</span>
                     <span id="progressPercent">20%</span>
                 </div>
-                <div class="progress-bar-bg">
-                    <div id="progressBar" class="progress-bar-fill" style="width:20%;"></div>
+                <div class="progress-track">
+                    <div id="progressBar" class="progress-fill" style="width:20%;"></div>
                 </div>
             </div>
             <form id="quizForm" onsubmit="handleQuizNext(event)">
-                <h4 id="questionText"></h4>
-                <div id="optionsContainer"></div>
-                <div class="quiz-nav">
-                    <button type="button" id="backBtn" class="btn btn-ghost-sm" onclick="goToPreviousQuestion()">← Back</button>
-                    <button type="submit" id="nextBtn" class="btn btn-primary">Next →</button>
+                <p id="questionText" class="quiz-question-text"></p>
+                <div id="optionsContainer" class="quiz-options"></div>
+                <div class="quiz-actions">
+                    <button type="button" id="backBtn" class="btn btn-quiz-back" onclick="goToPreviousQuestion()">Back</button>
+                    <button type="submit" id="nextBtn" class="btn btn-primary">Next</button>
                 </div>
             </form>
-            <div id="quizResultsScreen" style="display:none;">
-                <div class="results-icon">🎉</div>
-                <h3>Here's where you stand…</h3>
+            <div id="quizResultsScreen" style="display:none;" class="quiz-results">
+                <h3>Here's where you stand</h3>
                 <p id="resultsText"></p>
-                <button class="btn btn-primary" style="width:100%;margin-top:1.5rem;" onclick="closeModal('quiz'); openModal('call')">Book Your Free Discovery Call →</button>
-                <button class="btn btn-ghost-sm" style="width:100%;margin-top:0.75rem;" onclick="closeModal('quiz')">Close</button>
+                <button class="btn btn-primary" onclick="closeModal('quiz'); openModal('call')">Book Your Free Consultation</button>
+                <button class="btn btn-quiz-close" onclick="closeModal('quiz')">Close</button>
             </div>
         </div>
     </div>
 
     <div id="guideModal" class="modal">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('guide')">×</button>
-            <p class="modal-label">Free Download</p>
-            <h3>AI Starter Guide for Hygienists</h3>
-            <p>No fluff — just practical steps you can take this week.</p>
+            <button class="modal-close" onclick="closeModal('guide')">&#x2715;</button>
+            <p class="modal-kicker">Free Download</p>
+            <h3>AI Starter Guide for Dental Professionals</h3>
+            <p>No fluff — just practical steps you can take this week to begin your transition.</p>
             <form onsubmit="downloadGuide(event)">
                 <input type="email" placeholder="Your email address" required>
-                <button type="submit" class="btn btn-primary" style="width:100%;">Send Me the Guide →</button>
+                <button type="submit" class="btn btn-primary btn-full">Send Me the Guide</button>
             </form>
         </div>
     </div>
 
     <div id="skillsModal" class="modal">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('skills')">×</button>
-            <p class="modal-label">Free Checklist</p>
+            <button class="modal-close" onclick="closeModal('skills')">&#x2715;</button>
+            <p class="modal-kicker">Free Checklist</p>
             <h3>5 Skills You Already Have</h3>
-            <p>See how your clinical background translates to tech — this one surprises most people.</p>
+            <p>See how your clinical background maps directly to in-demand tech roles.</p>
             <form onsubmit="downloadGuide(event)">
                 <input type="email" placeholder="Your email address" required>
-                <button type="submit" class="btn btn-primary" style="width:100%;">Get the Checklist →</button>
+                <button type="submit" class="btn btn-primary btn-full">Get the Checklist</button>
             </form>
         </div>
     </div>
 
     <div id="videosModal" class="modal">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('videos')">×</button>
-            <p class="modal-label">Free Video Series</p>
-            <h3>Your Path — Free Video Series</h3>
-            <p>Short, practical videos covering AI basics and real career options. Sign up for instant access.</p>
+            <button class="modal-close" onclick="closeModal('videos')">&#x2715;</button>
+            <p class="modal-kicker">Free Video Series</p>
+            <h3>Your Path — Video Series</h3>
+            <p>Short, practical videos covering AI basics and real dental tech career options.</p>
             <form onsubmit="downloadGuide(event)">
                 <input type="email" placeholder="Your email address" required>
-                <button type="submit" class="btn btn-primary" style="width:100%;">Watch Now →</button>
+                <button type="submit" class="btn btn-primary btn-full">Get Instant Access</button>
             </form>
         </div>
     </div>
 
     <div id="callModal" class="modal">
         <div class="modal-content modal-wide">
-            <button class="modal-close" onclick="closeModal('call')">×</button>
-            <p class="modal-label">Free · No Obligation</p>
-            <h3>Book Your Discovery Call</h3>
-            <p>15–30 minutes. Let's talk about your situation and what's genuinely possible for you.</p>
-            <iframe src="https://calendar.google.com/calendar/u/0/appointments/schedules/[YOUR_LINK_HERE]" style="border:0;width:100%;height:480px;border-radius:8px;margin-top:1rem;"></iframe>
+            <button class="modal-close" onclick="closeModal('call')">&#x2715;</button>
+            <p class="modal-kicker">Free · No Obligation</p>
+            <h3>Schedule Your Free Consultation</h3>
+            <p>15–30 minutes with Maria. An honest conversation about your background and what's genuinely possible for you.</p>
+            <iframe src="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1YMMa65JL1Q7NHDlzFeuTlnuYUz8wvkGCGwoO7hKCGB-px3osyjJduv-i6wcu63WUUmarTeb91" style="border:0;width:100%;height:480px;border-radius:8px;margin-top:1rem;"></iframe>
         </div>
     </div>
 
     <div id="enrollModal" class="modal">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('enroll')">×</button>
-            <p class="modal-label">Career Transformation Program</p>
+            <button class="modal-close" onclick="closeModal('enroll')">&#x2715;</button>
+            <p class="modal-kicker">Career Transformation Program</p>
             <h3>Let's get you started.</h3>
             <p>Fill in your details and Maria will be in touch within 24 hours.</p>
             <form onsubmit="handleEnrollment(event)">
                 <input type="text" placeholder="Full name" required>
                 <input type="email" placeholder="Email address" required>
                 <input type="tel" placeholder="Phone number" required>
-                <button type="submit" class="btn btn-primary" style="width:100%;">Complete Enrolment →</button>
+                <button type="submit" class="btn btn-primary btn-full">Complete Enrolment</button>
             </form>
         </div>
     </div>
 
     <div id="newsletterModal" class="modal">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('newsletter')">×</button>
-            <p class="modal-label">Free Weekly Insights</p>
+            <button class="modal-close" onclick="closeModal('newsletter')">&#x2715;</button>
+            <p class="modal-kicker">Free Weekly Insights</p>
             <h3>Join the Community</h3>
-            <p>Emerging AI roles, training tips, and early access — every week.</p>
+            <p>Emerging AI roles, training updates, and early access — every week.</p>
             <form onsubmit="subscribeNewsletter(event)">
                 <input type="email" placeholder="Your email address" required>
-                <button type="submit" class="btn btn-primary" style="width:100%;">Subscribe →</button>
+                <button type="submit" class="btn btn-primary btn-full">Subscribe</button>
             </form>
         </div>
     </div>
